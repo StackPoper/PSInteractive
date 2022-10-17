@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="show"
+            type="com.task.psinteractive.data.ShowInfo" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/custom_margin"
+        android:orientation="vertical">
+
+        <com.task.psinteractive.ui.CustomBackgroundTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="30dp"
+            android:minHeight="40dp"
+            app:episodeTitle="@{show.episodeTitle}"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="120dp"
+            android:scaleType="fitXY"
+            android:layout_marginBottom="@dimen/custom_margin"
+            app:imageUrl="@{show.imageUrl}"
+            android:contentDescription="@string/poster" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="20dp"
+            android:orientation="horizontal">
+
+            <com.task.psinteractive.ui.CustomBackgroundTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:layout_gravity="start|center_vertical"
+                android:layout_weight="2"
+                android:lines="1"
+                app:startTime="@{show.startTime}"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <com.task.psinteractive.ui.CustomBackgroundTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:lines="1"
+                app:endTime="@{show.endTime}"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <com.task.psinteractive.ui.CustomBackgroundTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:layout_gravity="end|center_vertical"
+                android:layout_weight="2"
+                android:lines="1"
+                app:startPoint="@{show.startTime}"
+                app:endPoint="@{show.endTime}"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>
